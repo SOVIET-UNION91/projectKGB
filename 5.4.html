@@ -1,0 +1,119 @@
+<html>
+</head>
+<title> KGB TRANSLATOR :-</title>
+<style>
+   .title{
+   margin-bottom: 10px;
+   text-align:center;
+   width: 1350px;
+   color:black;
+   background-color: Aqua;
+   border: solid black 2px;
+   }
+   <<style media="screen">
+
+   </style>
+<body style="background-color:grey;">
+  <center><img width="150"src="logo.png"><h1> KGB TRANSLATOR :- </h1> <center>
+<div class=".app">
+  </div>
+   <p style="font-size:18px; font-style:bold;"></p>
+<div class="header"
+   <p><h2S><b>Translation :-<b></h2><p>
+   </div>
+   <input type="text" id="box" placeholder="Type here to translate"/>
+   <br/>
+   <input type="button" value="Send" onclick="addItem();"/>
+   <br/>
+    <div id="list"></div>
+  </div>
+  <script>
+   if(localStorage.storedList) {
+    loadList();
+   }
+  </script>
+ </body>
+ </html>
+
+</head>
+
+<body>
+  <div class="header"
+     <p><h2S><b>LANGUAGE :-</b></h2><p>
+     </div>
+
+	<div id="google_translate_element"></div>
+
+	<script type="text/javascript">
+		function googleTranslateElementInit() {
+			new google.translate.TranslateElement(
+				{pageLanguage: 'en'},
+				'google_translate_element'
+			);
+		}
+	</script>
+
+	<script type="text/javascript" src=
+"https://translate.google.com/translate_a/element.js?
+		cb=googleTranslateElementInit">
+	</script>
+
+
+	</p>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <body style="background-color:grey;">
+      <!DOCTYPE html>
+  <html>
+   <head>
+   <title>KGB TRANSLATOR:-</title>
+   <script>
+    function addItem() {
+     var newItem = document.createElement("div");
+     newItem.innerHTML = document.getElementById("box").value;
+     newItem.onclick = removeItem;
+     document.getElementById("list").appendChild(newItem);
+     saveList();
+    }
+    function removeItem() {
+     document.getElementById("list").removeChild(this);
+     saveList();
+    }
+    function saveList() {
+     localStorage.storedList = document.getElementById("list").innerHTML;
+    }
+    function loadList() {
+     document.getElementById("list").innerHTML = localStorage.storedList;
+     for(var i = 0; i < list.children.length; i++) {
+      list.children[i].onclick = removeItem;
+     }
+    }
+   </script>
+   <style>
+    .header {
+      height:40px;
+      width: 1250px;
+      background-color:Aqua;
+      float: center;
+      padding:10px;
+      margin:20px;
+      text-align:centre;
+      font-size:24px;
+    }
+    .app {
+      height:600px;
+      width: 350px;
+      background-color:lightgreen;
+      float: center;
+      padding:10px;
+      margin:20px;
+    }
+    input[type="button"] {
+     background-color: white;
+    }
+   </style>
+  </head>
+  <body>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <body style="background-color:grey;">
+      <!DOCTYPE html>
+  <html>
+   <head>
+   <title>KGB WEB CHAT SERVER:-</title>
+   <script>
+    function addItem() {
+     var newItem = document.createElement("div");
+     newItem.innerHTML = document.getElementById("box").value;
+     newItem.onclick = removeItem;
+     document.getElementById("list").appendChild(newItem);
+     saveList();
+    }
+    function removeItem() {
+     document.getElementById("list").removeChild(this);
+     saveList();
+    }
+    function saveList() {
+     localStorage.storedList = document.getElementById("list").innerHTML;
+    }
+    function loadList() {
+     document.getElementById("list").innerHTML = localStorage.storedList;
+     for(var i = 0; i < list.children.length; i++) {
+      list.children[i].onclick = removeItem;
+     }
+    }
+   </script>
+   <style>
+    .header {
+      height:100px;
+      width: 1250px;
+      background-color:Aqua;
+      float: center;
+      padding:10px;
+      margin:20px;
+      text-align:centre;
+      font-size:24px;
+    }
+    .app {
+      height:600px;
+      width: 350px;
+      background-color:lightgreen;
+      float: center;
+      padding:10px;
+      margin:20px;
+    }
+    input[type="button"] {
+     background-color: pink;
+    }
+   </style>
+  </head>
+  <body>
+   <div class="header">
+    <img width="110" src="logo.png"
+    style="float:left";<p><h1>KGB WEB CHAT SERVER:-</h1><p>
+   </div>
+   <div class="app">
+    <p style="font-size:18px; font-style:bold;"></p>
+    <p><h1>Chats:-</h1><p>
+    <input type="text" id="box" placeholder="Type here to Chat"/>
+    <br/>
+    <input type="button" value="Send" onclick="addItem();"/>
+    <br/>
+     <div id="list"></div>
+   </div>
+   <script>
+    if(localStorage.storedList) {
+     loadList();
+    }
+   </script>
+  </body>
+  </html>
